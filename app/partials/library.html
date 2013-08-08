@@ -1,15 +1,19 @@
-<div name="library">
+<div ng-cloak>
     <ul class="menu">
         <li ng-repeat="button in buttons">
             <a href="{{button.href}}">{{button.html}}</a>
         </li>
     </ul>
     
-    <ul>
-        <li ng-repeat="profile in profiles">
-            <button ng-click="profileClick(profile.name);" />{{profile.name}}</button>
-        </li>
-    </ul>
+    <div id="library_index" ng-show="getLevel() == 'library'">
+        Library
+        <ul>
+            <li ng-repeat="profile in profiles">
+                <button ng-click="profileClick(profile.name);" />{{profile.name}}</button>
+            </li>
+        </ul>
+    </div>
 
-    <div ng-include="'partials/profile.html'"></div>
+    <div id="profile_view" ng-show="getLevel() == 'profile.art' || getLevel() == 'profile.profile'" ng-include="'partials/profile.html'"></div>
+
 </div>

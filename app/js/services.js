@@ -2,11 +2,17 @@
 
 /* Services */
 
-
-// Demonstrate how to register services
-// In this case it is a simple value service.
 angular.module( 'myApp.services', [] ).
     value('version', '0.1').
+    service('LibraryLevel', function(){
+        var level = 'library';
+        
+        return {
+            get:function(){ return level; },
+            set:function( newLevel ){ level = newLevel; }
+        };
+    }).
+    // service que mostra os botoes do menu inicial. deveria ser um value.
     service('Buttons', function(){
         var buttons = {
             menu:[
@@ -26,6 +32,7 @@ angular.module( 'myApp.services', [] ).
         
         return buttons;
     }).
+    // service que provem os profiles de cada personagem.
     service('Profiles', function(){
         var profiles = {
                 "Vats Darkagma": {
@@ -41,12 +48,4 @@ angular.module( 'myApp.services', [] ).
             };
         
         return profiles;
-    }).
-    service('LibraryProfile', function(){
-        var profile = {};
-        
-        return {
-            get:function(){ return profile; },
-            set:function( newProfile ){ profile = newProfile; },
-        };
     });

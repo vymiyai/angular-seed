@@ -1,10 +1,24 @@
-This is a profile.
-<div>
-    {{profile.name}}<br />
-    {{profile.description}}<br />
+<div ng-cloak>
+    Library > {{profile.name}}<br />
+    
+    <div ng-show="getLevel() == 'profile.art'">
+        <img ng-src="{{profile.src}}" />
+    </div>
+    
+    <div ng-show="getLevel() == 'profile.profile'">
+        Name: {{profile.name}}<br />
+        Description: {{profile.description}}<br />
+    </div>
+
+    <ul class="menu">
+        <li>
+            <button ng-click="setLevel( 'library' )">Back</button>
+        </li>
+        <li>
+            <button ng-click="setLevel( 'profile.art' )">Character Art</button>
+        </li>
+        <li>
+            <button ng-click="setLevel( 'profile.profile' )">Profile</button>
+        </li>
+    </ul>
 </div>
-<ul class="menu">
-    <li>Back</li>
-    <li>Character Art</li>
-    <li>Profile</li>
-</ul>

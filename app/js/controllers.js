@@ -9,12 +9,10 @@ angular.module('myApp.controllers', []).
     controller('MyCtrl2', [ '$scope', 'Buttons', function( $scope, Buttons ) {
         $scope.buttons = Buttons.menu;
     }]).
-    controller('LibraryController', [ '$scope', 'Buttons', 'Profiles',  function( $scope, Buttons, Profiles ) {
+    controller('LibraryController', [ '$scope', 'Buttons', 'Profiles', 'LibraryLevel', function( $scope, Buttons, Profiles, LibraryLevel ) {
         $scope.buttons = Buttons.menu;
         $scope.profiles = Profiles;
-        
-        $scope.profileClick = function( characterName ){ $scope.profile = Profiles[ characterName ]; };
-    }]).
-    controller('ProfileController', [ '$scope', 'Profiles', 'LibraryProfile', function( $scope, Profiles, LibraryProfile ) {
-        
+        $scope.getLevel = function(){ return LibraryLevel.get(); };
+        $scope.setLevel = function( level ){ LibraryLevel.set( level ); };
+        $scope.profileClick = function( characterName ){ $scope.profile = Profiles[ characterName ]; LibraryLevel.set( 'profile.art' ) };
     }]);
