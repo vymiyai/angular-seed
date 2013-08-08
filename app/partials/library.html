@@ -1,0 +1,28 @@
+<div name="library">
+    <ul class="menu">
+        <li ng-repeat="button in buttons">
+            <a href="{{button.href}}">{{button.html}}</a>
+        </li>
+    </ul>
+    
+    
+    
+    <ul>
+        <li ng-repeat="profile in profiles">
+            <button ng-click="profileClick(profile.name);" />{{profile.name}}</button>
+        </li>
+    </ul>
+    
+    
+    
+    <div>
+        {{profile.name}}<br />
+        {{profile.description}}
+    </div>
+    
+    <ul class="menu">
+        <li>Back</li>
+        <li>Character Art</li>
+        <li>Profile</li>
+    </ul>
+</div>

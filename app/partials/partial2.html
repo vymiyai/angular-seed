@@ -1,5 +1,12 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div>
+    <ul class="menu">
+        <li ng-repeat="button in buttons">
+            <a href="{{button.href}}">{{button.html}}</a>
+        </li>
+    </ul>
+    <p>This is the partial for view 2.</p>
+    <p>
+      Showing of 'interpolate' filter:
+      {{ 'Current version is v%VERSION%.' | interpolate }}
+    </p>
+</div>
