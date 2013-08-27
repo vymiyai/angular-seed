@@ -1,0 +1,2 @@
+{"ts":1377635282730,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1377635302621,"patch":[[{"diffs":[[1,"'use strict';\n\nfunction BattleEngineStateEnd()\n{\n    this.execute = function( context )\n    {\n        // do stuff.\n        alert( \"End of battle.\" );\n    };\n    \n};"]],"start1":0,"start2":0,"length1":0,"length2":164}]],"length":164,"saved":false}

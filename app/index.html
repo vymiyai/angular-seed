@@ -6,19 +6,41 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
+    <script src="js/BattleEngine.js"></script>
+    <script src="js/BattleEngineStateInitial.js"></script>
+    <script src="js/BattleEngineStateRun.js"></script>
+    <script src="js/BattleEngineStateEnd.js"></script>
+    
+    <script src="js/Character.js"></script>
+    <script src="js/CharacterStateAlive.js"></script>
+    <script src="js/CharacterStateDead.js"></script>
 
-  <div id="main_view" ng-view ng-cloak></div>
+    <script>
+        var wololo = new BattleEngine( [ new Character( "01" ), new Character( "02" ) ], [ new Character( "03" ), new Character( "04" ) ] );
 
-  <div>Angular seed app: v<span app-version></span></div>
+        while( wololo.state.constructor.name != "BattleEngineStateEnd" )
+        {
+            wololo.execute();
+        };
+        
+        wololo.state.execute( null );
+    </script>
+<!--
+    <div id="main_view" ng-view ng-cloak></div>
+    
+    <div>Angular seed app: v<span app-version></span></div>
+-->
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    -->
+<!--
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+-->
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  -->
-  <script src="lib/angular/angular.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
 </body>
 </html>
