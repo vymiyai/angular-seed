@@ -14,16 +14,75 @@
     <script src="js/Character.js"></script>
     <script src="js/CharacterStateAlive.js"></script>
     <script src="js/CharacterStateDead.js"></script>
+    
+    <script src="lib/jquery-2.0.3.min.js"></script>
+    <script src="lib/jquery.fittext.js"></script>
 
     <script>
-        var wololo = new BattleEngine( [ new Character( "01" ), new Character( "02" ) ], [ new Character( "03" ), new Character( "04" ) ] );
+    /*
+        var group01 = [ new Character( "01" ), new Character( "02" ) ];
+        var group02 = [ new Character( "03" ), new Character( "04" ) ];
+        var engine = new BattleEngine( group01, group02 );
 
-        while( wololo.state.constructor.name != "BattleEngineStateEnd" )
+        while( engine.state.name != "END" )
         {
-            wololo.execute();
+            engine.execute();
         };
         
-        wololo.state.execute( null );
+        engine.state.execute( null );
+        */
+    </script>
+    
+    <div id="visible-area" style="width: 100%; height: 100%;">
+        <div style="width: 100%; height: 60%;">
+            <table style="width: 100%; height: 100%;">
+                <tr>
+                    <td style="width: 50%; height: 100%;">
+                        <div style="width: 100%; height: 50%; position: relative; overflow: hidden;">
+                            <img src="img/zah.png" class="sprite sprite01">
+                        </div>
+                    </td>
+                    <td style="width: 50%; height: 100%;">
+                        <div style="width: 100%; height: 50%; position: relative; overflow: hidden;">
+                            <img src="img/zah.png" class="sprite sprite02">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="width: 100%; height: 40%;">
+            <br />
+            <br />
+            dggr srs ts  sr yry g rh stu srt jsrtjsrtjsrj srtjsrtjsrt jsrtj srt jsr tjs rtjs rtj srj
+            <br />
+        </div>
+    </div>
+    
+    
+    <script>
+        var resizeFunction = function () {         
+            $("#visible-area").each(function(){
+            var h = $(window).height();
+            var w = $(window).width();
+            
+            if( h * 0.6 < w )
+            {
+                $(this).css("width", h * 0.6 + "px" );
+                $(this).css("height", h + "px");
+            } 
+            else
+            {
+                $(this).css("width", w + "px");
+                $(this).css("height", w * 1.66666667 + "px" );
+            }
+            
+            }); 
+        };
+    
+        $(window).resize( resizeFunction );
+        
+        resizeFunction();
+        $("#visible-area").fitText();
     </script>
 <!--
     <div id="main_view" ng-view ng-cloak></div>

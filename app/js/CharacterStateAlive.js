@@ -2,6 +2,7 @@
 
 function CharacterStateAlive()
 {
+    this.name = "ALIVE";
     this.execute = function( context )
     {
         var random = Math.random();

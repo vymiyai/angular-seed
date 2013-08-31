@@ -8,7 +8,7 @@ function Character( specs )
     // initialize character state.
     this.state = new CharacterStateAlive();
     
-    this.execute = function()
+    this.execute = function( context )
     {
         this.state.execute( this );
     };
@@ -20,7 +20,7 @@ function Character( specs )
     
     this.getCurrentState = function()
     {
-        return this.state.constructor.name;
+        return this.state.name;
     };
     
 };

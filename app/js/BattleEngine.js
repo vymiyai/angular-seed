@@ -27,48 +27,34 @@ function BattleEngine( battleGroup01, battleGroup02 )
         return this.elements[ this.currentCharacter ];
     };
     
-    this.setNextCharacter = function()
+    this.nextCharacter = function()
     {
         var index = this.currentCharacter;
         index++;
         this.currentCharacter = index % this.elements.length;
     };
     
+    this.isGroupAlive = function( group )
+    {
+        for( var index in group )
+        {
+            var characterState = group[ index ].getCurrentState();
+            if( characterState == "ALIVE" )
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    };
+    
     this.isBattleFinished = function()
     {
-        var index;
-        var battleGroup01Alive = false;
-        var battleGroup02Alive = false;
-        
-        for( index in this.battleGroup01 )
-        {
-            var characterState = this.battleGroup01[ index ].getCurrentState();
-            if( characterState == "CharacterStateAlive" )
-            {
-                battleGroup01Alive = true;
-                break;
-            }
-        }
-        
-        for( index in this.battleGroup02 )
-        {
-            var characterState = this.battleGroup02[ index ].getCurrentState();
-            if( characterState == "CharacterStateAlive" )
-            {
-                battleGroup02Alive = true;
-                break;
-            }
-        }
-        
+        var battleGroup01Alive = this.isGroupAlive( this.battleGroup01 );
+        var battleGroup02Alive = this.isGroupAlive( this.battleGroup02 );
+
         // return false only when both battle groups are alive.
         return !( battleGroup01Alive && battleGroup02Alive );
-        
-        /*
-        if( Math.random() < 0.9 )
-            return false;
-        else
-            return true;
-        */
     };
     
     this.getTurnCount = function()

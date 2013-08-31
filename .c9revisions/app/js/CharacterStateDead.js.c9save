@@ -3,3 +3,4 @@
 {"ts":1377640258593,"patch":[[{"diffs":[[0,"othing.\n"],[1,"        alert( \"Character \" + context.specs + \"is dead. Next character...\" );\n"],[0,"    };\n "]],"start1":107,"start2":107,"length1":16,"length2":94}]],"length":207,"saved":false}
 {"ts":1377640263115,"patch":[[{"diffs":[[0,"ad. "],[-1,"N"],[1,"Go to n"],[0,"ext "]],"start1":167,"start2":167,"length1":9,"length2":15}]],"length":213,"saved":false}
 {"ts":1377640332050,"patch":[[{"diffs":[[0,"pecs + \""],[1," "],[0,"is dead."]],"start1":154,"start2":154,"length1":16,"length2":17}]],"length":214,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1377776204218,"patch":[[{"diffs":[[0,"ead()\n{\n"],[1,"    this.name = \"DEAD\";\n"],[0,"    this"]],"start1":39,"start2":39,"length1":16,"length2":40}]],"length":238,"saved":false}

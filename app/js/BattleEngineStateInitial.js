@@ -2,6 +2,7 @@
 
 function BattleEngineStateInitial()
 {
+    this.name = "INITIAL";
     this.execute = function( context )
     {
         alert( "Initializing battle engine." );

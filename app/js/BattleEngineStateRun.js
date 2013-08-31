@@ -2,12 +2,13 @@
 
 function BattleEngineStateRun()
 {
+    this.name = "RUN";
     this.execute = function( context )
     {
         // do stuff with state.
         var character = context.getCurrentCharacter();
-        character.execute();
-        context.setNextCharacter();
+        character.execute( this );
+        context.nextCharacter();
         
         if( context.isBattleFinished() )
         {

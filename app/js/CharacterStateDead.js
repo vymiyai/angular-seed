@@ -2,6 +2,7 @@
 
 function CharacterStateDead()
 {
+    this.name = "DEAD";
     this.execute = function( context )
     {
         // do nothing.
