@@ -36,18 +36,25 @@
     <div id="visible-area" style="width: 100%; height: 100%;">
         <div style="width: 100%; height: 60%;">
             <table style="width: 100%; height: 100%;">
+                <tbody>
                 <tr>
                     <td style="width: 50%; height: 100%;">
-                        <div style="width: 100%; height: 50%; position: relative; overflow: hidden;">
+                        <div style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+                            <div class="container">
                             <img src="img/zah.png" class="sprite sprite01">
+                            </div>
                         </div>
                     </td>
+                    <td style="width: 0%; height: 100%;"></td>
                     <td style="width: 50%; height: 100%;">
-                        <div style="width: 100%; height: 50%; position: relative; overflow: hidden;">
+                        <div style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+                            <div class="container">
                             <img src="img/zah.png" class="sprite sprite02">
+                            </div>
                         </div>
                     </td>
                 </tr>
+                </tbody>
             </table>
         </div>
         <div style="width: 100%; height: 40%;">
@@ -83,6 +90,7 @@
         
         resizeFunction();
         $("#visible-area").fitText();
+        
     </script>
 <!--
     <div id="main_view" ng-view ng-cloak></div>
