@@ -62,7 +62,7 @@
     <div id="spawnArea"></div>
     
     <!-- visible area of the application. scales with the screen size keeping the same aspect ratio. -->
-    <div id="visible-area" style="width: 100%; height: 100%;">
+    <div id="visibleArea" style="width: 100%; height: 100%;">
         <!-- temporary filling -->
         <div style="width: 100%; height: 5%; background-color: gray;"></div>
         
@@ -73,9 +73,7 @@
         <div style="width: 100%; height: 5%; background-color: gray;"></div>
         
         <!-- the dialog box -->
-        <div id="dialogBox" style="width: 100%; height: 25%; background-color: blue;">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...
-        </div>
+        <div id="dialogBox" style="width: 100%; height: 25%; background-color: blue;"></div>
         
         <!-- temporary filling -->
         <div style="width: 100%; height: 5%; background-color: gray;"></div>
@@ -84,7 +82,7 @@
     <!-- script that enables the visible area resizing. -->
     <script>
         var resizeFunction = function () {         
-            $("#visible-area").each(function(){
+            $("#visibleArea").each(function(){
             var h = $(window).height();
             var w = $(window).width();
             
@@ -109,7 +107,7 @@
         resizeFunction();
         
         // turn text in the visible area aspect ratio constant.
-        $("#visible-area").fitText(1.2);
+        $("#visibleArea").fitText(1.2);
         
         // run intro00.
         var ce = new CinematicsEngine( new Intro00() );

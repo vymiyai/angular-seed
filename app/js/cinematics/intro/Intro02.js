@@ -9,17 +9,13 @@ function Intro02()
         {
             var ccallback = function()
             {
-                $( '#dialogBox' ).unbind('click');
-                    
-                var newState = new Intro03();
-                context.setState( newState );
-                context.execute();
+                context.jumpTo( new Intro03() );
             };
-                
-            $( '#dialogBox' ).click( ccallback );
+
+            context.dialog( "A primeira vadia some agora...", ccallback );
         };
         
-        context.dismiss( "sakuya2", callback );
+        context.dismiss( "sakuya", callback );
     };
     
 };

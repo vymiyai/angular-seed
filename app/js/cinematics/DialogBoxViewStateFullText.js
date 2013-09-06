@@ -6,13 +6,18 @@ function DialogBoxViewStateFullText()
 
     this.click = function( context )
     {
+        $( '#dialogBox' )
+            .text( "" )
+            .unbind('click');
+            
         context.callback();
     };
     
     this.showText = function( context )
     {
-        $( '#dialogBox' ).text( context.message );
-        $( '#dialogBox' ).click( function(){ context.click(); } );
+        $( '#dialogBox' )
+            .text( context.message )
+            .click( function(){ context.click(); } );
     };
     
 };

@@ -9,16 +9,12 @@ function Intro00()
         {
             var ccallback = function()
             {
-                var cccalback = function()
+                var cccallback = function()
                 {
-                    $( '#dialogBox' ).unbind('click');
-                    
-                    var newState = new Intro01();
-                    context.setState( newState );
-                    context.execute();
+                    context.jumpTo( new Intro01() );
                 };
-                
-                $( '#dialogBox' ).click( cccalback );
+
+                context.dialog( "Esta é a primeira tela da introdução...", cccallback );
             };
 
             new CharacterView().instantiate( "sakuya", "img/sazuyaizayoi.png", "sprite02" );

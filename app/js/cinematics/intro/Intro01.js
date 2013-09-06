@@ -9,14 +9,10 @@ function Intro01()
         {
             var ccallback = function()
             {
-                $( '#dialogBox' ).unbind('click');
-                    
-                var newState = new Intro02();
-                context.setState( newState );
-                context.execute();
+                context.jumpTo( new Intro02() );
             };
-                
-            $( '#dialogBox' ).click( ccallback );
+
+            context.dialog( "Agora uma vagabunda aparece do lado da outra...", ccallback );
         };
 
         new CharacterView().instantiate( "sakuya2", "img/sazuyaizayoi.png", "sprite01" );

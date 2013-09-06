@@ -7,10 +7,15 @@ function Intro04()
     {
         var callback = function()
         {
-            alert( "Intro cinematics: END" );
+            var ccallback = function()
+            {
+                alert( "Intro cinematics: END" );
+            };
+                
+            $( '#visibleArea' ).fadeOut( 1000, ccallback );
         };
         
-        context.dismiss( "sakuya", callback );
+        context.dismiss( "sakuya2", callback );
     };
     
     

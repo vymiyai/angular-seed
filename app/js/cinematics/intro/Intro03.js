@@ -7,21 +7,10 @@ function Intro03()
     {
         var callback = function()
         {
-            var ccallback = function()
-            {
-                $( '#dialogBox' ).unbind('click');
-                    
-                var newState = new Intro04();
-                context.setState( newState );
-                context.execute( context );
-            };
-                
-            $( '#dialogBox' ).click( ccallback );
+            context.jumpTo( new Intro04() );
         };
         
-        var dialogBox = new DialogBoxView();
-        dialogBox.setText( "wololo wololo aeyoyolo wololo~", callback );
-        dialogBox.showText();
+        context.dialog( "Diálogo sem sentido para encher linguiça.", callback );
     };
     
 };

@@ -21,6 +21,20 @@ function CinematicsEngine( cinematic )
         return this.state.name;
     };
     
+    // convenience methods.
+    this.jumpTo = function( scene )
+    {
+        this.setState( scene );
+        this.execute();
+    };
+    
+    this.dialog = function( message, callback )
+    {
+        var dialogBox = new DialogBoxView();
+        dialogBox.setMessage( message, callback );
+        dialogBox.showText();
+    };
+    
     // stage view methods.
     this.summon = function( characterId, callback )
     {

@@ -4,11 +4,11 @@ function DialogBoxView()
 {
     this.state = new DialogBoxViewStateEmptyText();
     
-    this.fadeOutTime = 250;
-    this.fadeInTime = 250;
+    this.fadeOutTime = 500;
+    this.fadeInTime = 500;
     
     this.target = "dialogBox";
-    this.interval = 50;
+    this.interval = 30;
     
     this.message = "";
     this.callback = null;
@@ -28,7 +28,7 @@ function DialogBoxView()
         this.state = newState;
     };
 
-    this.setText = function( message, callback )
+    this.setMessage = function( message, callback )
     {
         this.message = message;
         this.callback = callback;
