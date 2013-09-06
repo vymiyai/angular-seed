@@ -1,0 +1,4 @@
+{"ts":1377982775201,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1377982760466,"patch":[[{"diffs":[[1,"'use strict';\n\nfunction Intro03()\n{\n    this.name = \"Intro03\";\n    this.execute = function( context )\n    {\n        \n    };\n    \n};"]],"start1":0,"start2":0,"length1":0,"length2":131}]],"length":131,"saved":false}
+{"ts":1377982985632,"patch":[[{"diffs":[[0,"        "],[1,"var callback = function()\n        {\n            \n        };\n        \n        $( '#dialogBox' ).click( callback );"],[0,"\n    };\n"]],"start1":108,"start2":108,"length1":16,"length2":129}]],"length":244,"saved":false}
+{"ts":1377983061278,"patch":[[{"diffs":[[0,"  {\n            "],[1,"var newState = new Intro04();"],[0,"\n        };\n    "]],"start1":148,"start2":148,"length1":32,"length2":61}]],"length":273,"saved":false}

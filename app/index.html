@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>My AngularJS App</title>
   <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/sprites.css"/>
 </head>
 <body>
     <script src="js/BattleEngine.js"></script>
@@ -17,6 +18,19 @@
     
     <script src="lib/jquery-2.0.3.min.js"></script>
     <script src="lib/jquery.fittext.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    
+    <script src="js/CinematicsEngine.js"></script>
+    <script src="js/cinematics/intro/Intro00.js"></script>
+    <script src="js/cinematics/intro/Intro01.js"></script>
+    <script src="js/cinematics/intro/Intro02.js"></script>
+    
+    <script src="js/cinematics/StageView.js"></script>
+    <script src="js/cinematics/StageViewStateZeroCharacters.js"></script>
+    <script src="js/cinematics/StageViewStateOneCharacter.js"></script>
+    <script src="js/cinematics/StageViewStateTwoCharacters.js"></script>
+    
+    <script src="js/cinematics/CharacterView.js"></script>
 
     <script>
     /*
@@ -31,38 +45,20 @@
         
         engine.state.execute( null );
         */
+
     </script>
+    <div id="spawnArea"></div>
     
     <div id="visible-area" style="width: 100%; height: 100%;">
-        <div style="width: 100%; height: 60%;">
-            <table style="width: 100%; height: 100%;">
-                <tbody>
-                <tr>
-                    <td style="width: 50%; height: 100%;">
-                        <div style="width: 100%; height: 100%; position: relative; overflow: hidden;">
-                            <div class="container">
-                            <img src="img/zah.png" class="sprite sprite01">
-                            </div>
-                        </div>
-                    </td>
-                    <td style="width: 0%; height: 100%;"></td>
-                    <td style="width: 50%; height: 100%;">
-                        <div style="width: 100%; height: 100%; position: relative; overflow: hidden;">
-                            <div class="container">
-                            <img src="img/zah.png" class="sprite sprite02">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+        <div style="width: 100%; height: 5%; background-color: gray;"></div>
+        
+        <div id="stage"></div>
+        
+        <div style="width: 100%; height: 5%; background-color: gray;"></div>
+        <div id="dialogBox" style="width: 100%; height: 25%; background-color: blue;">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...
         </div>
-        <div style="width: 100%; height: 40%;">
-            <br />
-            <br />
-            dggr srs ts  sr yry g rh stu srt jsrtjsrtjsrj srtjsrtjsrt jsrtj srt jsr tjs rtjs rtj srj
-            <br />
-        </div>
+        <div style="width: 100%; height: 5%; background-color: gray;"></div>
     </div>
     
     
@@ -89,8 +85,15 @@
         $(window).resize( resizeFunction );
         
         resizeFunction();
-        $("#visible-area").fitText();
+        $("#visible-area").fitText(1.2);
         
+        
+        
+        
+        
+        
+        var ce = new CinematicsEngine( new Intro00() );
+        ce.execute();
     </script>
 <!--
     <div id="main_view" ng-view ng-cloak></div>

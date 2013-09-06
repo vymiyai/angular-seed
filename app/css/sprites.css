@@ -1,0 +1,77 @@
+.characterSlotLeft
+{
+    width: 50%;
+    height: 100%;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.characterSlotCenter
+{
+    width: 50%;
+    height: 100%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.characterSlotRight
+{
+    width: 50%;
+    height: 100%;
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.invisible
+{
+    opacity: 0;
+}
+
+.visible
+{
+    opacity: 1;
+}
+
+.outerContainer
+{
+    width: 100%; 
+    height: 100%; 
+    position: relative; 
+    overflow: hidden;
+}
+
+.innerContainer
+{
+    width: 100%; 
+    height: 100%;
+    margin-left: -40%;
+    position: absolute;
+}
+
+.sprite
+{
+    width: 600%;
+    height: auto;
+}
+
+.sprite01
+{
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.sprite02
+{
+    margin-top: 0;
+    margin-left: -200%;
+}
+
+.sprite03
+{
+    margin-top: 0;
+    margin-left: -400%;
+}
