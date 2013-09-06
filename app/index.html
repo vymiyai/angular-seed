@@ -1,29 +1,32 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
 <head>
-  <meta charset="utf-8">
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" href="css/app.css"/>
-  <link rel="stylesheet" href="css/sprites.css"/>
-</head>
-<body>
-    <script src="js/BattleEngine.js"></script>
-    <script src="js/BattleEngineStateInitial.js"></script>
-    <script src="js/BattleEngineStateRun.js"></script>
-    <script src="js/BattleEngineStateEnd.js"></script>
-    
-    <script src="js/Character.js"></script>
-    <script src="js/CharacterStateAlive.js"></script>
-    <script src="js/CharacterStateDead.js"></script>
-    
+    <meta charset="utf-8">
+    <title>Library Prototype</title>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/sprites.css"/>
+
     <script src="lib/jquery-2.0.3.min.js"></script>
     <script src="lib/jquery.fittext.js"></script>
     <script src="lib/jquery-ui.js"></script>
     
+    <!-- battle engine related stuff. -->
+    <script src="js/BattleEngine.js"></script>
+    <script src="js/BattleEngineStateInitial.js"></script>
+    <script src="js/BattleEngineStateRun.js"></script>
+    <script src="js/BattleEngineStateEnd.js"></script>
+
+    <script src="js/Character.js"></script>
+    <script src="js/CharacterStateAlive.js"></script>
+    <script src="js/CharacterStateDead.js"></script>
+
+    <!-- cinematics related stuff. -->
     <script src="js/CinematicsEngine.js"></script>
     <script src="js/cinematics/intro/Intro00.js"></script>
     <script src="js/cinematics/intro/Intro01.js"></script>
     <script src="js/cinematics/intro/Intro02.js"></script>
+    <script src="js/cinematics/intro/Intro03.js"></script>
+    <script src="js/cinematics/intro/Intro04.js"></script>
     
     <script src="js/cinematics/StageView.js"></script>
     <script src="js/cinematics/StageViewStateZeroCharacters.js"></script>
@@ -31,7 +34,14 @@
     <script src="js/cinematics/StageViewStateTwoCharacters.js"></script>
     
     <script src="js/cinematics/CharacterView.js"></script>
+    
+    <script src="js/cinematics/DialogBoxView.js"></script>
+    <script src="js/cinematics/DialogBoxViewStateEmptyText.js"></script>
+    <script src="js/cinematics/DialogBoxViewStateFullText.js"></script>
+    <script src="js/cinematics/DialogBoxViewStateShowText.js"></script>
+</head>
 
+<body>
     <script>
     /*
         var group01 = [ new Character( "01" ), new Character( "02" ) ];
@@ -47,21 +57,31 @@
         */
 
     </script>
+    
+    <!-- invisible block to be used as a container element for summoned characters. -->
     <div id="spawnArea"></div>
     
+    <!-- visible area of the application. scales with the screen size keeping the same aspect ratio. -->
     <div id="visible-area" style="width: 100%; height: 100%;">
+        <!-- temporary filling -->
         <div style="width: 100%; height: 5%; background-color: gray;"></div>
         
+        <!-- area where characters are summoned -->
         <div id="stage"></div>
         
+        <!-- temporary filling -->
         <div style="width: 100%; height: 5%; background-color: gray;"></div>
+        
+        <!-- the dialog box -->
         <div id="dialogBox" style="width: 100%; height: 25%; background-color: blue;">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...
         </div>
+        
+        <!-- temporary filling -->
         <div style="width: 100%; height: 5%; background-color: gray;"></div>
     </div>
     
-    
+    <!-- script that enables the visible area resizing. -->
     <script>
         var resizeFunction = function () {         
             $("#visible-area").each(function(){
@@ -82,16 +102,16 @@
             }); 
         };
     
+        // on window resize, rescale the visible area.
         $(window).resize( resizeFunction );
         
+        // resize visible area to the current screen size.
         resizeFunction();
+        
+        // turn text in the visible area aspect ratio constant.
         $("#visible-area").fitText(1.2);
         
-        
-        
-        
-        
-        
+        // run intro00.
         var ce = new CinematicsEngine( new Intro00() );
         ce.execute();
     </script>

@@ -34,3 +34,5 @@
 {"ts":1378483175563,"patch":[[{"diffs":[[0,"  {\n"],[-1,"        // change stage state to \"One Character Stage\".\n"],[0,"    "]],"start1":162,"start2":162,"length1":64,"length2":8},{"diffs":[[0,"ible"],[-1," and update stage state"],[1,"."],[0,".\n  "]],"start1":365,"start2":365,"length1":31,"length2":9}]],"length":758,"saved":false}
 {"ts":1378483385507,"patch":[[{"diffs":[[0,"e\", "],[-1,"500"],[1,"context.fadeInTime"],[0,", \"l"]],"start1":577,"start2":577,"length1":11,"length2":26}]],"length":773,"saved":false}
 {"ts":1378483529237,"patch":[[{"diffs":[[0,"To( "],[-1,"context.selector()"],[1,"\"#stage\""],[0," )\n "]],"start1":506,"start2":506,"length1":26,"length2":16}]],"length":763,"saved":false}
+{"ts":1378484586530,"patch":[[{"diffs":[[0,"visible."],[-1,"."],[0,"\n       "]],"start1":362,"start2":362,"length1":17,"length2":16}]],"length":762,"saved":false}
+{"ts":1378484590970,"patch":[[{"diffs":[[0," // "],[-1,"make"],[1,"turn"],[0," the"]],"start1":339,"start2":339,"length1":12,"length2":12}]],"length":762,"saved":false}

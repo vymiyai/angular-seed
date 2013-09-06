@@ -8,11 +8,11 @@ function Intro04()
         var callback = function()
         {
             alert( "Intro cinematics: END" );
-            
-            // do something else.
         };
         
-        $( '#dialogBox' ).click( callback );
+        context.dismiss( "sakuya", callback );
     };
+    
+    
     
 };

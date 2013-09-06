@@ -26,16 +26,6 @@
     margin-right: auto;
 }
 
-.invisible
-{
-    opacity: 0;
-}
-
-.visible
-{
-    opacity: 1;
-}
-
 .outerContainer
 {
     width: 100%; 
@@ -50,6 +40,16 @@
     height: 100%;
     margin-left: -40%;
     position: absolute;
+}
+
+.invisible
+{
+    opacity: 0;
+}
+
+.visible
+{
+    opacity: 1;
 }
 
 .sprite

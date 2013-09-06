@@ -12,7 +12,7 @@ function StageViewStateZeroCharacters()
             callback();
         };
         
-        // make the character visible..
+        // turn the character visible.
         $( '#' + characterId )
             .addClass( "characterSlotCenter" )
             .addClass( "invisible" )
